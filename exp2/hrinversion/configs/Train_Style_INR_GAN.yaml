@@ -1,4 +1,4 @@
-root_obs: &root_obs s3://bucket-7001/ZhouPeng
+root_obs: &root_obs s3://bucket-7001/xxxx
 modelarts_download: &modelarts_download
   data_root:
     datapath_obs: '{global_cfg.root_obs}/keras/mixed_faces/mixed_faces1024_v3.zip'
