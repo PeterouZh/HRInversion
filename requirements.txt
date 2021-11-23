@@ -1,3 +1,5 @@
 streamlit
-tl2==0.0.4
-
+tl2==0.0.6
+timm
+ninja
+lpips

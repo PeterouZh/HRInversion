@@ -13,8 +13,13 @@ pip install --no-cache-dir -r requirements.txt
 
 ## Downsampling vs. No downsampling
 
-Please run the command below to do inversion for a real image:
+Download the official pre-trained StyleGAN2 model [ffhq-res1024-mirror-stylegan2-noaug.pkl](https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/transfer-learning-source-nets/ffhq-res1024-mirror-stylegan2-noaug.pkl).
+Put the model file in `datasets2/pretrained`.
+
+Run the command below:
 ```bash
+
+export CUDA_HOME=/usr/local/cuda-10.2/
 streamlit run --server.port 8661 \
   exp2/hrinversion/scripts/projector_web.py -- \
   --cfg_file exp2/hrinversion/configs/projector_web.yaml \
@@ -22,8 +27,12 @@ streamlit run --server.port 8661 \
   --outdir results/projector_web
 
 ```
+and then open the browser: `http://your_ip_address:8661`
 
+You can debug this script with this command:
 ```bash
+
+export CUDA_HOME=/usr/local/cuda-10.2/
 python exp2/hrinversion/scripts/projector_web.py \
   --cfg_file exp2/hrinversion/configs/projector_web.yaml \
   --command projector_web \

@@ -30,13 +30,7 @@ projector_web:
     image_list_files:
       aligned_faces:
         image_list_file: "datasets2/aligned_faces"
-    fps: 20
+    network_pkl: *network_pkl
     loss_cfg: *loss_cfg
-    default_loss_cfg: vgg16_conv_r1024_loss_cfg
-    num_steps: 1000
-    optim_noise_bufs: false
     regularize_noise_weight: 0.0
-    initial_learning_rate: 0.1
-    proj_w_plus: true
-    mse_weight: 50.0
-    normalize_noise: true
+

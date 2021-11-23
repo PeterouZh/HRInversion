@@ -8,8 +8,8 @@ import torch
 from torchvision.utils import make_grid
 import torchvision.transforms.functional as trans_f
 
-from template_lib.proj.pil import pil_utils
-from template_lib.proj import np_utils
+from tl2.proj.pil import pil_utils
+from tl2.proj.numpy import np_utils
 
 from torch_utils import misc
 import dnnlib
