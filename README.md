@@ -46,9 +46,13 @@ python exp2/hrinversion/scripts/projector_web.py \
 
 ```
 
+The LSO experiments requires fine-tuning models on target domains first. 
+Please refer to `exp2/hrinversion/scripts` for more scripts. 
 
 
+## Acknowledgments
 
+- stylegan2-ada from [https://github.com/NVlabs/stylegan2-ada-pytorch](https://github.com/NVlabs/stylegan2-ada-pytorch)
 
 
 
