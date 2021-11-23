@@ -328,7 +328,7 @@ class StyleGAN2Projector(object):
         seed=123,
         lpips_metric=None,
         fps=10,
-        hd_video=False,
+        hd_video=True,
         save_noise_bufs=False,
         st_log_every=100,
         st_web=False,
@@ -424,7 +424,7 @@ class StyleGAN2Projector(object):
         img_noise_pil = stylegan_utils.to_pil(synth_images.detach())
         merged_pil = pil_utils.merge_image_pil([target_pil, img_noise_pil, img_pil], nrow=3, dst_size=2048, pad=1)
         pil_utils.add_text(
-          merged_pil, text=f"step: {step}, psnr: {psnr:.2f}dB, ssim: {ssim:.2f}", size=merged_pil.size[0] // 30)
+          merged_pil, text=f"step: {step}, psnr: {psnr:.2f}dB, ssim: {ssim:.2f}", size=merged_pil.size[0] // 10)
 
         st_image.image(merged_pil, caption=f"target {target_pil.size}, img_noise_pil {img_noise_pil.size},"
                                            f"img_pil {img_pil.size}")
