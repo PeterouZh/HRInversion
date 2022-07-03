@@ -207,7 +207,6 @@ class VGG16ConvLoss(torch.nn.Module):
                  'features_14': 0.0001,
                  'features_21': 0.0002,
                  'features_28': 0.0005,
-                 
                },
                **kwargs):
     super().__init__()

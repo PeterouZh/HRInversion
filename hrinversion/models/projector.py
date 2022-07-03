@@ -28,8 +28,7 @@ from tl2.proj.pytorch.ddp import ddp_utils
 from tl2.proj.fvcore.checkpoint import Checkpointer
 
 import dnnlib
-import legacy
-from exp2.comm import stylegan_utils, stylegan_utils_v1
+from ..utils import stylegan_utils, stylegan_utils_v1
 from hrinversion.models.vgg_conv_perceptual_loss import VGG16ConvLoss
 
 
@@ -436,7 +435,8 @@ class StyleGAN2Projector(object):
         video_f_inversion.write(img_pil)
 
       synth_features = self.get_vgg16_fea(image_tensor=synth_images, c=label)
-      percep_loss = (target_features - synth_features).square().sum()
+      # percep_loss = (target_features - synth_features).square().sum()
+      percep_loss = F.mse_loss(synth_features, target_features, reduction='sum')
 
       if mse_weight > 0:
         mse_loss = F.mse_loss(synth_images, target=target_images.detach())
