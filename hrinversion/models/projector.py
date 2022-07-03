@@ -29,7 +29,7 @@ from tl2.proj.fvcore.checkpoint import Checkpointer
 
 import dnnlib
 from ..utils import stylegan_utils, stylegan_utils_v1
-from hrinversion.models.vgg_conv_perceptual_loss import VGG16ConvLoss
+from hrinversion import VGG16ConvLoss
 
 
 @MODEL_REGISTRY.register(name_prefix=__name__)
