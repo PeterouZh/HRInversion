@@ -1,0 +1,13 @@
+projector_web:
+  mode:
+    - projector_web
+  projector_web:
+    image_list_files:
+      aligned_faces:
+        image_list_file: "datasets/aligned_faces"
+    G_pkl: "datasets/pretrained/ffhq-res1024-mirror-stylegan2-noaug.pkl"
+    loss_name:
+      - vgg16_conv
+      - vgg16_jit
+    regularize_noise_weight: 0.0
+
