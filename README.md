@@ -16,7 +16,7 @@ pip install -e HRInversion
 
 # Usage
 
-```bash
+```python
 import torch
 import torch.nn.functional as F
 from hrinversion import VGG16ConvLoss
