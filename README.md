@@ -36,6 +36,8 @@ loss.backward()
 
 # A GAN inversion demo using hrinversion
 
+https://user-images.githubusercontent.com/26176709/177040601-17c9581c-eac7-498c-b486-a7cbcdc417c2.mp4
+
 ```bash
 pip install torch
 
