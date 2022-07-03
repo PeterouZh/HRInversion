@@ -1,5 +1,5 @@
 streamlit
-tl2==0.0.6
+tl2
 timm
 ninja
 lpips
