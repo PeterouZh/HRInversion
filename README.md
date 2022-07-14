@@ -39,17 +39,31 @@ loss.backward()
 
 <details open>
 <summary>
-  Projecting real images
+  Inversion (please zoom in to see artifacts. )
 </summary>
   
-https://user-images.githubusercontent.com/26176709/171443469-12676d42-c278-49dd-969d-e9fb9e79b453.mp4
+https://user-images.githubusercontent.com/26176709/178883567-032c562c-b529-4eb4-af3d-5f0013d87db6.mp4
 </details>
 
+<details open>
+<summary>
+  LSO for ukiyo_e
+</summary>
+  
+https://user-images.githubusercontent.com/26176709/178882562-a59990db-f01c-43e5-8600-bbbd7e9eac4b.mp4
+</details>
 
+<details open>
+<summary>
+  LSO for disney
+</summary>
+  
+https://user-images.githubusercontent.com/26176709/178883223-a0498706-ed5c-4413-9412-8a63f99ae305.mp4
+</details>
 
 # A web demo using hrinversion
 
-https://user-images.githubusercontent.com/26176709/177040601-17c9581c-eac7-498c-b486-a7cbcdc417c2.mp4
+<!-- https://user-images.githubusercontent.com/26176709/177040601-17c9581c-eac7-498c-b486-a7cbcdc417c2.mp4 -->
 
 - Prepare models
 ```bash
