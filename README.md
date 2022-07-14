@@ -61,6 +61,14 @@ https://user-images.githubusercontent.com/26176709/178882562-a59990db-f01c-43e5-
 https://user-images.githubusercontent.com/26176709/178883223-a0498706-ed5c-4413-9412-8a63f99ae305.mp4
 </details>
 
+<details open>
+<summary>
+  Panorama
+</summary>
+  
+https://user-images.githubusercontent.com/26176709/178884422-d1bcd97a-14f3-4cb1-a5c2-b1a21cdad441.mp4
+</details>
+
 # A web demo using hrinversion
 
 <!-- https://user-images.githubusercontent.com/26176709/177040601-17c9581c-eac7-498c-b486-a7cbcdc417c2.mp4 -->
