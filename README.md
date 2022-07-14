@@ -34,13 +34,25 @@ loss.backward()
 
 ```
 
-# A GAN inversion demo using hrinversion
+
+# Demo videos
+
+<details open>
+<summary>
+  Projecting real images
+</summary>
+  
+https://user-images.githubusercontent.com/26176709/171443469-12676d42-c278-49dd-969d-e9fb9e79b453.mp4
+</details>
+
+
+
+# A web demo using hrinversion
 
 https://user-images.githubusercontent.com/26176709/177040601-17c9581c-eac7-498c-b486-a7cbcdc417c2.mp4
 
+- Prepare models
 ```bash
-pip install torch
-
 # Download StyleGAN2 models
 wget https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/transfer-learning-source-nets/ffhq-res1024-mirror-stylegan2-noaug.pkl -P datasets/pretrained/
 wget https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metrics/vgg16.pt -P datasets/pretrained/
@@ -57,7 +69,7 @@ datasets/
     └── vgg16.pt
 ```
 
-Start a web demo:
+- Start a web demo:
 ```bash
 streamlit run --server.port 8501 \
   hrinversion/scripts/projector_web.py -- \
@@ -67,7 +79,7 @@ streamlit run --server.port 8501 \
 
 ```
 
-Debug the script with this command:
+- (optional) Debug the script with this command:
 ```bash
 python hrinversion/scripts/projector_web.py \
   --cfg_file hrinversion/configs/projector_web.yaml \
@@ -77,9 +89,14 @@ python hrinversion/scripts/projector_web.py \
 
 ```
 
-Results
+- Results
 
 <img src=".github/screen.png" width="600">
+
+
+## Stylization
+
+TBD
 
 ## Acknowledgments
 
