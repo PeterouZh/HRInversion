@@ -10,7 +10,7 @@ setuptools.setup(
     install_requires=[
         'tl2>=0.0.9',
         'streamlit',
-        'timm',
+        'timm==0.5.4',
         'ninja',
         'lpips',
     ],
