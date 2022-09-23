@@ -6,9 +6,12 @@ if __name__ == '__main__':
   import torch.nn.functional as F
   from hrinversion import VGG16ConvLoss
   
-  input = (torch.rand(1, 3, 1024, 1024).cuda() - 0.5) * 2  # [-1, 1]
+  # img_size = 1024
+  img_size = 64
+  
+  input = (torch.rand(1, 3, img_size, img_size).cuda() - 0.5) * 2  # [-1, 1]
   input = torch.nn.Parameter(input)
-  target = (torch.rand(1, 3, 1024, 1024).cuda() - 0.5) * 2  # [-1, 1]
+  target = (torch.rand(1, 3, img_size, img_size).cuda() - 0.5) * 2  # [-1, 1]
   percep_loss = VGG16ConvLoss().cuda()
   
   fea_input = percep_loss(input)
