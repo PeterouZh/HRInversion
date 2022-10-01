@@ -21,17 +21,23 @@ import torch
 import torch.nn.functional as F
 from hrinversion import VGG16ConvLoss
 
-input = (torch.rand(1, 3, 1024, 1024).cuda() - 0.5) * 2  # [-1, 1]
-input = torch.nn.Parameter(input)
-target = (torch.rand(1, 3, 1024, 1024).cuda() - 0.5) * 2  # [-1, 1]
+bs = 1
+# Note that the shortest edge of the image must be larger than 32 pixels.
+img_size = 1024
 
-percep_loss = VGG16ConvLoss().cuda()
+# Dummy data
+target = (torch.rand(bs, 3, img_size, img_size).cuda() - 0.5) * 2  # [-1, 1]
+pred = (torch.rand(bs, 3, img_size, img_size).cuda() - 0.5) * 2  # [-1, 1]
+pred.requires_grad_(True)
 
-fea_input = percep_loss(input)
+# Create vgg model. Automatically download pretrained models.
+percep_loss = VGG16ConvLoss().cuda().requires_grad_(False)
+
 fea_target = percep_loss(target)
-loss = F.mse_loss(fea_input, fea_target, reduction='sum')
-loss.backward()
+fea_pred = percep_loss(pred)
 
+loss = F.mse_loss(fea_pred, fea_target, reduction='sum') / bs # normalized by batch size
+loss.backward()
 ```
 
 
