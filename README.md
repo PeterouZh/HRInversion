@@ -30,8 +30,13 @@ target = (torch.rand(bs, 3, img_size, img_size).cuda() - 0.5) * 2  # [-1, 1]
 pred = (torch.rand(bs, 3, img_size, img_size).cuda() - 0.5) * 2  # [-1, 1]
 pred.requires_grad_(True)
 
-# Create vgg model. Automatically download pretrained models.
+# VGG conv-based perceptual loss
 percep_loss = VGG16ConvLoss().cuda().requires_grad_(False)
+
+# high-level perceptual loss: d_h
+# percep_loss = VGG16ConvLoss(fea_dict={'features_2': 0., 'features_7': 0., 'features_14': 0.,
+#                                       'features_21': 0.0002, 'features_28': 0.0005,
+#                                       }).cuda().requires_grad_(False)
 
 fea_target = percep_loss(target)
 fea_pred = percep_loss(pred)
